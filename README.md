@@ -1,34 +1,45 @@
-# Starter REST Api
+# DevCamper API
 
-This is an example REST Api designed to be deployed on Cyclic.sh
+> Backend API for DevCamper application, which is a bootcamp directory website
 
-[![Deploy to Cyclic](https://deploy.cyclic.app/button.svg)](https://deploy.cyclic.app/)
+## Usage
 
+Rename "config/config.env.env" to "config/config.env" and update the values/settings to your own
 
-## Examples
+## Install Dependencies
 
-### Create/Update - Insert/Upsert
-
-```shell
-curl -i https://localhost:3000/animals/rin%20tin%20tin \
-    --data '{"breed":"German Shepard", "gender": "male"}' \
-    -XPOST -H 'Content-Type: application/json'
+```
+npm install
 ```
 
-### Read All - List
+## Run App
 
-```shell
-curl -i https://localhost:3000/animals
+```
+# Run in dev mode
+npm run dev
+
+# Run in prod mode
+npm start
 ```
 
-### Read
+## Database Seeder
 
-```shell
-curl -i https://localhost:3000/animals/lassy
+To seed the database with users, bootcamps, courses and reviews with data from the "\_data" folder, run
+
+```
+# Destroy all data
+node seeder -d
+
+# Import all data
+node seeder -i
 ```
 
-### Delete
+## Demo
 
-```shell
-curl -i -XDELETE https://localhost:3000/animals/lassy
-```
+The API is live at [devcamper.io](https://devcamper.io)
+
+Extensive documentation with examples [here](https://documenter.getpostman.com/view/8923145/SVtVVTzd?version=latest)
+
+- Version: 1.0.0
+- License: MIT
+- Author: Brad Traversy
